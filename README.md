@@ -62,12 +62,12 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: tried to add a toy via form, looked at network tab of developer tools, specifically the preview section. Received internal server error. Looked at rails server in terminal. Uninitialized constant in ToysController in create method. Typo found of Toys.create, needs to be Toy.create.
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: Tried to click like button on toy. Received SyntaxError: Unexpected end of JSON input. Means something is wrong with our fetch request. I know to check the controller to make sure we are returning JSON data in the response. It was not, updated the update method to return json.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: Clicked Donate to GoodWill. Received 404 error status in Network tab of Developer tools. Added a byebug to my destroy method in the controller. routes.rb did not contain :destroy resource route, added. 
